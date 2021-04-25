@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>我的练习</title>
+<script src="jquery-3.1.0.min.js"></script>
+<style>
+img{
+	border:5px solid red;
+	margin:0;
+	padding:0;	
+	width:590px;
+	vertical-align: top;
+}
+.showbox{
+	width:600px;
+	height:300px;
+	margin:50px auto;
+	border:5px solid #000;
+	font-size:0;
+	overflow:hidden;
+	position:relative;	
+}
+.wrap{
+	width: 3600px;
+	position: absolute;
+	left: 0;
+	transition:0.5s;	
+}
+span{
+	font-size:60px;
+	position:absolute;	
+	top:150px;
+}
+.prev{
+	left:600px;:	
+}
+.next{
+	right:600px;:	
+}
+</style>
+</head>
+<body>
+<div class="showbox">
+	<div class="wrap">
+    	<img src="周杰伦img/1.jpg"/>
+        <img src="周杰伦img/2.jpg"/>
+        <img src="周杰伦img/3.jpg"/>
+        <img src="周杰伦img/4.jpg"/>
+        <img src="周杰伦img/5.jpg"/>
+    </div>
+    
+</div>
+<span class="prev"><</span>
+<span class="next">></span>
+<script>
+	var num=0
+	$(".next").click(function(){
+		if(num>=4){
+			num=0;	
+		}else{
+			num++;
+		}
+		$(".wrap").css({left:"-600"*num+"px"});
+	});
+	$(".prev").click(function(){
+		if(num<=0){
+			num=4;	
+		}else{
+			num--;
+		}
+		$(".wrap").css({left:"-600"*num+"px"});
+	});
+</script>
+</body>
+</html>
